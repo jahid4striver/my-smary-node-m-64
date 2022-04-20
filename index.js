@@ -20,8 +20,13 @@ const users=[
     {id:7, name: 'Tobon', email: 'Tobon@gmail.com', phone: '0178888888'},
 ]
 
+// app.get('/users', (req, res)=>{
+//     res.send(users);
+// })
+
+// filer by serach queery parameter
+
 app.get('/users', (req, res)=>{
-    // filer by serach queery parameter
     if(req.query.name){
         const search= req.query.name.toLowerCase();
         const matched= users.filter(user=>user.name.toLowerCase().includes(search))
